@@ -1,0 +1,31 @@
+<div class="team-container" *ngFor="let team of teams$ | async">
+    <h3>Team full wage: {{ team.sumWage }} </h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Team</th>
+            <th scope="col">Age</th>
+            <th scope="col">Wage</th>
+            <th scope="col">End of contract date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of team.players ">
+            <th>{{player.name}}</th>
+            <td>{{player.position}}</td>
+            <td>{{player.team}}</td>
+            <td>{{player.age}}</td>
+            <td>{{player.wage}}</td>
+            <td>{{player.endOfContract | date }}</td>
+            <td>
+                <button (click)="getPlayerDetails(player.id)">Details</button>
+            </td>
+            <td>
+                <button (click)="deletePlayer(player.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

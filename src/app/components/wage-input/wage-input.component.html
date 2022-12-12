@@ -1,0 +1,22 @@
+<form [formGroup]="addWageForm">
+    <div>
+        <label
+            for="currentMoney">Current money:</label>
+        <input
+            class="form-control"
+            type="number"
+            id="currentMoney"
+            formControlName="currentMoney"
+            (input)="addMoney()">
+    </div>
+    <div>
+        <label
+            for="monthlyIncome">Club monthly income:</label>
+        <input
+            class="form-control"
+            type="number"
+            id="monthlyIncome"
+            formControlName="monthlyIncome"
+            (input)="addMonthlyIncome()">
+    </div>
+</form>

@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+label {
+    font-size: large;
+    font-weight: 500;
+}
+
+div {
+    margin: 20px 0 20px 0
+}
+
+input {
+    box-shadow: 2px 6px 10px 4px rgba(0, 0, 0, 0.295);
+}

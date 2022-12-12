@@ -1,0 +1,12 @@
+
+<div class="player-container" *ngIf="(player$ | async) as player">
+    <h1>{{ player.name }}'s detail page</h1>
+    <p><span>Position:</span> {{ player.position}} </p>
+    <p><span>Tean:</span> {{ player.team}} </p>
+    <p><span>Age:</span> {{ player.age }} </p>
+    <p><span>Wage:</span> {{ player.wage }} </p>
+    <p><span>End of Contract:</span> {{ player.endOfContract | date }} </p>
+    <button class="btn btn-primary" (click)="editPlayer()">Edit Player</button>
+    <button class="btn btn-danger" (click)="deletePlayer()">Delete Player</button>
+</div>
+

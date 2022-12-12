@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Player List</h1>
+  <button class="btn btn-primary" routerLink="/add">Add Player</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Team</th>
+        <th scope="col">Age</th>
+        <th scope="col">Wage</th>
+        <th scope="col">End of contract date</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players$ | async">
+      <td>{{ player.name }}</td>
+      <td>{{ player.position }}</td>
+      <td>{{ player.team }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.wage }}</td>
+      <td>{{ player.endOfContract | date}}</td>
+      <td>
+        <button class="btn btn-info details" (click)="getPlayerDetails(player.id)">Details</button>
+      </td>
+      <td>
+        <button class="btn btn-danger delete" (click)="deletePlayer(player.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
