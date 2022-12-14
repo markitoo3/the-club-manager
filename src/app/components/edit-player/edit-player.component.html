@@ -1,4 +1,4 @@
-<h1>Player details</h1>
+<h1>Edit player</h1>
 <div class="edit-player-container">
     <form class="form-group" [formGroup]="editPlayerForm" (ngSubmit)="editPlayer()">
 
@@ -46,7 +46,6 @@
             >
         </div>
         <p *ngIf="team.touched && team.hasError('required')">Team is required!</p>
-        <p *ngIf="team.invalid && team.hasError('pattern')">You must enter only letters!</p>
 
         <div>
             <label class="form-label" for="age">Age</label>
@@ -64,7 +63,7 @@
         <p *ngIf="age.invalid && age.hasError('pattern')">You must enter only numbers!</p>
 
         <div>
-            <label class="form-label" for="wage">Wage</label>
+            <label class="form-label" for="wage">Wage in €</label>
             <input
             class="form-control"
             type="text"
@@ -92,7 +91,6 @@
                 >
         </div>
         <p *ngIf="endOfContract.touched && endOfContract.hasError('required')">End of Contract is required</p>
-        <p *ngIf="endOfContract.invalid && endOfContract.hasError('pattern')">You must enter only letters</p>
 
         <button class="btn btn-primary">Save player</button>
         <button class="btn btn-light" (click)="prevPage()">Back</button>

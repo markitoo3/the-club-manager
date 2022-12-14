@@ -18,8 +18,8 @@
       <td>{{ player.name }}</td>
       <td>{{ player.position }}</td>
       <td>{{ player.team }}</td>
-      <td>{{ player.age }}</td>
-      <td>{{ player.wage }}</td>
+      <td>{{ player.age | number }}</td>
+      <td>{{ player.wage | currency:'EUR' }}</td>
       <td>{{ player.endOfContract | date}}</td>
       <td>
         <button class="btn btn-info details" (click)="getPlayerDetails(player.id)">Details</button>

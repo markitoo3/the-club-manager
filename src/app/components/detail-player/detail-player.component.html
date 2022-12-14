@@ -6,7 +6,10 @@
     <p><span>Age:</span> {{ player.age }} </p>
     <p><span>Wage:</span> {{ player.wage }} </p>
     <p><span>End of Contract:</span> {{ player.endOfContract | date }} </p>
-    <button class="btn btn-primary" (click)="editPlayer()">Edit Player</button>
-    <button class="btn btn-danger" (click)="deletePlayer()">Delete Player</button>
+    <div class="button-container">
+        <button class="btn btn-primary" (click)="editPlayer()">Edit Player</button>
+        <button class="btn btn-danger" (click)="deletePlayer()">Delete Player</button>
+        <button class="btn btn-light" (click)="backToPlayers()">Back</button>
+    </div>
 </div>
 

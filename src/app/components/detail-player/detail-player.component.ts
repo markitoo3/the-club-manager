@@ -37,5 +37,9 @@ export class DetailPlayerComponent implements OnInit {
     this.playersService.deletePlayer(this.activeroute.snapshot.params['id']);
     this.router.navigate(['/players']);
   }
+
+  backToPlayers() {
+    this.router.navigate(['/players']);
+  }
 }
 

@@ -12,5 +12,22 @@
 }
 
 button {
-    margin: 20px 0px 20px 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 2px 6px 10px 4px rgba(0, 0, 0, 0.295);
+    border-radius: 10px;
+    background: rgb(255, 148, 61);
+    border: 2px solid rgb(255, 148, 61);
+    font-weight: 500;
+    color: black;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 0 0;
+}
+
+
+
+

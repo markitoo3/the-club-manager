@@ -16,7 +16,7 @@ export class AddPlayerComponent implements OnInit {
     this.addPlayerForm = fb.group({
       name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]],
       position: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
-      team: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
+      team: ['', [Validators.required, Validators.required]],
       age: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       wage: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       endOfContract: ['', [Validators.required]],
@@ -28,8 +28,14 @@ export class AddPlayerComponent implements OnInit {
 
   addPlayer() {
     if(this.addPlayerForm.valid) {
-      this.playersService.addPlayer(this.addPlayerForm.value);
-      this.router.navigate(['/players']);
+      let addedPlayer = {
+        ...this.addPlayerForm.value,
+        id: parseInt(this.addPlayerForm.value.id),
+        wage: parseInt(this.addPlayerForm.value.wage),
+      }
+
+    this.playersService.addPlayer(addedPlayer);
+    this.router.navigate(['/players']);
     }
   }
 

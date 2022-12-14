@@ -17,7 +17,7 @@ export class EditPlayerComponent implements OnInit {
     this.editPlayerForm = fb.group({
       name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]],
       position: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
-      team: ['', [Validators.required, Validators.pattern(/^[A-Za-z]+$/)]],
+      team: ['', [Validators.required, Validators.required]],
       age: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       wage: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
       endOfContract: ['', [Validators.required]],
