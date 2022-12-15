@@ -2,6 +2,7 @@
     <h1>Wage info box</h1>
     <p>Current money: {{ currentMoney$ | async }} </p>
     <p>Current monthly income: {{ monthlyIncome$ | async }} </p>
+    <p>Current total wages: {{ totalWages$ | async }} </p>
     <p>Exptected money at the end of next month: {{ (currentMoney$ | async)! + (monthlyIncome$ | async)! - (totalWages$ | async)! }} </p>
     <p>Club financial stability: {{ getFinancialStatus( (currentMoney$ | async)!, (monthlyIncome$ | async)!, (totalWages$ | async )!) }} </p>
 </div>

@@ -23,19 +23,32 @@ export class WageInfoBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getFinancialStatus(currentMoney: number, monthlyIncome: number, totalWages: number): string{
-    if(totalWages! < monthlyIncome!) {
-      return `The club is financial stable`
-    } else {
-      let month = 0;
-      currentMoney = currentMoney! + (monthlyIncome! - totalWages!)
-      while(currentMoney > 0){
-        month++;
-        currentMoney = currentMoney! + (monthlyIncome! - totalWages!)
-      }
-      return month === 1 ? `The club's financial reserves run out after 1 month` : `The club's financial reserves run out after ${month} months`
+  getFinancialStatus(currentMoney: number, monthlyIncome: number, totalWages: number): string {
+
+    let financialStatus: string = "";
+    let monthlyExpenses: number = totalWages;
+    let months: number = 0;
+
+    if (monthlyIncome > monthlyExpenses) {
+      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      return financialStatus = "The club is in a good financial status";
     }
+    else if (monthlyIncome < monthlyExpenses) {
+      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      return financialStatus = "The club's financial reserves run out after " + months + " months";
+    }
+    else {
+      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      return financialStatus = "The club is in a neutral financial status";
+    }
+
   }
+
+
+
+
+
+
 
 
 

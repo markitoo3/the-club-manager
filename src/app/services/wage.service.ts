@@ -12,7 +12,7 @@ export class WageService {
 
   constructor() {
     this.currentClubMoney$.next(this.currentMoney);
-    this.monthlyClubIncome$.next(1100001020);
+    this.monthlyClubIncome$.next(0);
   }
 
   addMoney(money: number) {

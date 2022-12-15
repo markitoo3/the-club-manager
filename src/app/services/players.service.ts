@@ -123,20 +123,15 @@ export class PlayersService {
   }
 
   addPlayer(player: Player): Observable<Player> {
-    let maxId = 0;
-    let newPlayers = this.players.map(p => {
-      if (p.id > maxId) {
-        maxId = p.id;
-      }
-      return p;
-    });
-
-    player.id = maxId + 1;
+    let newPlayers = this.players;
+    player.id = Date.now();
     newPlayers.push(player);
-
     this.players = newPlayers;
+
     return of(player);
   }
+
+  //1671017808230
 
   overWritePlayer(player: Player): Observable<Player> {
 
@@ -152,8 +147,13 @@ export class PlayersService {
 
   deletePlayer(id: number): Observable<Player> {
     let playerId = this.players.findIndex(p => p.id === id);
-    this.players.splice(playerId, 1);
-    return of();
+    if (playerId > -1) {
+      let deletedPlayer = this.players[playerId];
+      this.players.splice(playerId, 1);
+      return of(deletedPlayer);
+    } else {
+      return of();
+    }
   }
 
   getSumWage(): Observable<number> {
