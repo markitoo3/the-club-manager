@@ -23,6 +23,7 @@ export class WageInfoBoxComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   getFinancialStatus(currentMoney: number, monthlyIncome: number, totalWages: number): string {
 
     let financialStatus: string = "";
@@ -30,26 +31,24 @@ export class WageInfoBoxComponent implements OnInit {
     let months: number = 0;
 
     if (monthlyIncome > monthlyExpenses) {
-      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      months = Math.round(Math.abs(currentMoney / (monthlyIncome - monthlyExpenses)));
       return financialStatus = "The club is in a good financial status";
     }
     else if (monthlyIncome < monthlyExpenses) {
-      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      months = Math.round(Math.abs(currentMoney / (monthlyIncome - monthlyExpenses)));
       return financialStatus = "The club's financial reserves run out after " + months + " months";
     }
     else {
-      months = currentMoney / (monthlyIncome - monthlyExpenses);
+      months = Math.round(Math.abs(currentMoney / (monthlyIncome - monthlyExpenses)));
       return financialStatus = "The club is in a neutral financial status";
     }
 
+
+
+
+
+
+
   }
-
-
-
-
-
-
-
-
 
 }
